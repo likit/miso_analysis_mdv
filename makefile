@@ -15,4 +15,4 @@ compute-expression-with-cluster:
 	qsub line6i_miso.sh
 	qsub line6u_miso.sh
 	qsub line7i_miso.sh
-	sub line7u_miso.sh
+	qsub line7u_miso.sh
