@@ -16,3 +16,9 @@ compute-expression-with-cluster:
 	qsub line6u_miso.sh
 	qsub line7i_miso.sh
 	qsub line7u_miso.sh
+	
+summarize-results:
+	run_miso.py --summarize-samples results/SE/line6u/ results/SE/line6u/summary
+	run_miso.py --summarize-samples results/SE/line6i/ results/SE/line6i/summary
+	run_miso.py --summarize-samples results/SE/line7u/ results/SE/line7u/summary
+	run_miso.py --summarize-samples results/SE/line7i/ results/SE/line7i/summary
