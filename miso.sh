@@ -11,4 +11,4 @@ module load BEDTools/2.17.0
 
 cd ${PBS_O_WORKDIR}
 
-run_events_analysis.py --compute-genes-psi ${index_dir} ${input_bam} --output-dir ${output_dir} --read-len 75 --settings-filename=protocol/miso_settings.txt --use-cluster --event-type ${event} --chunk-jobs 100
+run_events_analysis.py --compute-genes-psi ${index_dir} ${input_bam} --output-dir ${output_dir} --read-len 75 --settings-filename=~/miso-protocol/miso_settings.txt --use-cluster --event-type ${event} --chunk-jobs 100
