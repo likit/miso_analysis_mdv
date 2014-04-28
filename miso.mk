@@ -24,7 +24,47 @@ build-mxe-index: build-mxe-models
 
 summarize-se:
 
-	#cd miso; run_miso.py --summarize-samples results/SE/line6u results/SE/line6u
-	cd miso; run_miso.py --summarize-samples results/SE/line6i results/SE/line6i
-	cd miso; run_miso.py --summarize-samples results/SE/line7u results/SE/line7u
-	cd miso; run_miso.py --summarize-samples results/SE/line7i results/SE/line7i
+	cd miso; run_miso.py --summarize-samples cuffref-results/SE/line6u cuffref-results/SE/line6u
+	cd miso; run_miso.py --summarize-samples cuffref-results/SE/line6i cuffref-results/SE/line6i
+	cd miso; run_miso.py --summarize-samples cuffref-results/SE/line7u cuffref-results/SE/line7u
+	cd miso; run_miso.py --summarize-samples cuffref-results/SE/line7i cuffref-results/SE/line7i
+
+summarize-a3ss:
+
+	cd miso; run_miso.py --summarize-samples cuffref-results/A3SS/line6u cuffref-results/A3SS/line6u
+	cd miso; run_miso.py --summarize-samples cuffref-results/A3SS/line6i cuffref-results/A3SS/line6i
+	cd miso; run_miso.py --summarize-samples cuffref-results/A3SS/line7u cuffref-results/A3SS/line7u
+	cd miso; run_miso.py --summarize-samples cuffref-results/A3SS/line7i cuffref-results/A3SS/line7i
+
+summarize-a5ss:
+
+	cd miso; run_miso.py --summarize-samples cuffref-results/A5SS/line6u cuffref-results/A5SS/line6u
+	cd miso; run_miso.py --summarize-samples cuffref-results/A5SS/line6i cuffref-results/A5SS/line6i
+	cd miso; run_miso.py --summarize-samples cuffref-results/A5SS/line7u cuffref-results/A5SS/line7u
+	cd miso; run_miso.py --summarize-samples cuffref-results/A5SS/line7i cuffref-results/A5SS/line7i
+
+run-miso-a3ss:
+
+	#cd miso; qsub -v input_bam="bam-data/line6u.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line6u",event="A3SS" \
+	#	~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line6i.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line6i",event="A3SS" \
+		~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line7u.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line7u",event="A3SS" \
+		~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line7i.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line7i",event="A3SS" \
+		~/miso-protocol/miso.sh
+
+run-miso-a5ss:
+
+	cd miso; qsub -v input_bam="bam-data/line6u.bam",index_dir="cuffref-index/A5SS",output_dir="cuffref-results/A5SS/line6u",event="A5SS" \
+		~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line6i.bam",index_dir="cuffref-index/A5SS",output_dir="cuffref-results/A5SS/line6i",event="A5SS" \
+		~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line7u.bam",index_dir="cuffref-index/A5SS",output_dir="cuffref-results/A5SS/line7u",event="A5SS" \
+		~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line7i.bam",index_dir="cuffref-index/A5SS",output_dir="cuffref-results/A5SS/line7i",event="A5SS" \
+		~/miso-protocol/miso.sh
+
+compare-miso-se:
+	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6u cuffref-results/SE/line7u cuffref-results/SE/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6i cuffref-results/SE/line7i cuffref-results/SE/comparisons
