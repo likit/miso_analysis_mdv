@@ -66,5 +66,6 @@ run-miso-a5ss:
 		~/miso-protocol/miso.sh
 
 compare-miso-se:
+
 	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6u cuffref-results/SE/line7u cuffref-results/SE/comparisons
 	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6i cuffref-results/SE/line7i cuffref-results/SE/comparisons
