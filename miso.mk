@@ -45,8 +45,8 @@ summarize-a5ss:
 
 run-miso-a3ss:
 
-	#cd miso; qsub -v input_bam="bam-data/line6u.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line6u",event="A3SS" \
-	#	~/miso-protocol/miso.sh
+	cd miso; qsub -v input_bam="bam-data/line6u.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line6u",event="A3SS" \
+		~/miso-protocol/miso.sh
 	cd miso; qsub -v input_bam="bam-data/line6i.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line6i",event="A3SS" \
 		~/miso-protocol/miso.sh
 	cd miso; qsub -v input_bam="bam-data/line7u.bam",index_dir="cuffref-index/A3SS",output_dir="cuffref-results/A3SS/line7u",event="A3SS" \
@@ -69,8 +69,43 @@ compare-miso-se:
 
 	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6u cuffref-results/SE/line7u cuffref-results/SE/comparisons
 	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6i cuffref-results/SE/line7i cuffref-results/SE/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6u cuffref-results/SE/line6i cuffref-results/SE/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/SE/line7u cuffref-results/SE/line7i cuffref-results/SE/comparisons
+
+compare-miso-a3ss:
+
+	cd miso; run_miso.py --compare-samples cuffref-results/A3SS/line6u cuffref-results/A3SS/line7u cuffref-results/A3SS/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/A3SS/line6i cuffref-results/A3SS/line7i cuffref-results/A3SS/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/A3SS/line6u cuffref-results/A3SS/line6i cuffref-results/A3SS/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/A3SS/line7u cuffref-results/A3SS/line7i cuffref-results/A3SS/comparisons
+
+compare-miso-a5ss:
+
+	cd miso; run_miso.py --compare-samples cuffref-results/A5SS/line6u cuffref-results/A5SS/line7u cuffref-results/A5SS/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/A5SS/line6i cuffref-results/A5SS/line7i cuffref-results/A5SS/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/A5SS/line6u cuffref-results/A5SS/line6i cuffref-results/A5SS/comparisons
+	cd miso; run_miso.py --compare-samples cuffref-results/A5SS/line7u cuffref-results/A5SS/line7i cuffref-results/A5SS/comparisons
 
 filter-miso-se:
 
 	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/SE/comparisons/line6u_vs_line7u/bayes-factors/line6u_vs_line7u.miso_bf SE 0.20 0.20 10 2 > cuffref-results/SE/comparisons/line6u_vs_line7u/bayes-factors/line6u_vs_line7u.miso_bf.flt
 	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/SE/comparisons/line6i_vs_line7i/bayes-factors/line6i_vs_line7i.miso_bf SE 0.20 0.20 10 2 > cuffref-results/SE/comparisons/line6i_vs_line7i/bayes-factors/line6i_vs_line7i.miso_bf.flt
+
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/SE/comparisons/line6u_vs_line6i/bayes-factors/line6u_vs_line6i.miso_bf SE 0.20 0.20 10 2 > cuffref-results/SE/comparisons/line6u_vs_line6i/bayes-factors/line6u_vs_line6i.miso_bf.flt
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/SE/comparisons/line7u_vs_line7i/bayes-factors/line7u_vs_line7i.miso_bf SE 0.20 0.20 10 2 > cuffref-results/SE/comparisons/line7u_vs_line7i/bayes-factors/line7u_vs_line7i.miso_bf.flt
+
+filter-miso-a3ss:
+
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A3SS/comparisons/line6u_vs_line7u/bayes-factors/line6u_vs_line7u.miso_bf ASS 0.20 0.20 10 > cuffref-results/A3SS/comparisons/line6u_vs_line7u/bayes-factors/line6u_vs_line7u.miso_bf.flt
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A3SS/comparisons/line6i_vs_line7i/bayes-factors/line6i_vs_line7i.miso_bf ASS 0.20 0.20 10 > cuffref-results/A3SS/comparisons/line6i_vs_line7i/bayes-factors/line6i_vs_line7i.miso_bf.flt
+
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A3SS/comparisons/line6u_vs_line6i/bayes-factors/line6u_vs_line6i.miso_bf ASS 0.20 0.20 10 > cuffref-results/A3SS/comparisons/line6u_vs_line6i/bayes-factors/line6u_vs_line6i.miso_bf.flt
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A3SS/comparisons/line7u_vs_line7i/bayes-factors/line7u_vs_line7i.miso_bf ASS 0.20 0.20 10 > cuffref-results/A3SS/comparisons/line7u_vs_line7i/bayes-factors/line7u_vs_line7i.miso_bf.flt
+
+filter-miso-a5ss:
+
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A5SS/comparisons/line6u_vs_line7u/bayes-factors/line6u_vs_line7u.miso_bf ASS 0.20 0.20 10 > cuffref-results/A5SS/comparisons/line6u_vs_line7u/bayes-factors/line6u_vs_line7u.miso_bf.flt
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A5SS/comparisons/line6i_vs_line7i/bayes-factors/line6i_vs_line7i.miso_bf ASS 0.20 0.20 10 > cuffref-results/A5SS/comparisons/line6i_vs_line7i/bayes-factors/line6i_vs_line7i.miso_bf.flt
+
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A5SS/comparisons/line6u_vs_line6i/bayes-factors/line6u_vs_line6i.miso_bf ASS 0.20 0.20 10 > cuffref-results/A5SS/comparisons/line6u_vs_line6i/bayes-factors/line6u_vs_line6i.miso_bf.flt
+	cd miso; python ~/miso-protocol/miso-filter.py cuffref-results/A5SS/comparisons/line7u_vs_line7i/bayes-factors/line7u_vs_line7i.miso_bf ASS 0.20 0.20 10 > cuffref-results/A5SS/comparisons/line7u_vs_line7i/bayes-factors/line7u_vs_line7i.miso_bf.flt
