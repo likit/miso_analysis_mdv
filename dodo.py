@@ -27,8 +27,8 @@ def task_run_MISO_SE():
     os.chdir(doit.initial_workdir)
     for sample in ['line6u', 'line6i', 'line7u', 'line7i']:
         cmd = 'qsub -v "input_bam=bam-data/%s.bam,index_dir=cuffref-index/SE' \
-                ',output_dir=cuffref-results/SE,event=SE"' \
-                ' protocol/miso.sh' % (sample)
+                ',output_dir=cuffref-results/SE/%s,event=SE"' \
+                ' ~/miso-protocol/miso.sh' % (sample, sample)
 
         yield {
                 'actions': [cmd],
