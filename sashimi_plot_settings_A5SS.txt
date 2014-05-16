@@ -1,0 +1,95 @@
+[data]
+# directory where BAM files are
+bam_prefix = /mnt/ls12/preeyanon/mdv/miso/bam-data
+# directory where MISO output is
+miso_prefix = /mnt/ls12/preeyanon/mdv/miso/cuffref-results/A5SS
+
+bam_files = [
+    "line6u.bam",
+    "line6i.bam",
+    "line7u.bam",
+    "line7i.bam",
+    ]
+
+miso_files = [
+    "line6u",
+    "line6i",
+    "line7u",
+    "line7i",
+    ]
+
+sample_labels = [
+    "line 6 uninfected",
+    "line 6 infected",
+    "line 7 uninfected",
+    "line 7 infected",
+    ]
+
+[plotting]
+# Dimensions of figure to be plotted (in inches)
+fig_width = 7
+fig_height = 5 
+# Factor to scale down introns and exons by
+intron_scale = 30
+exon_scale = 4
+# Whether to use a log scale or not when plotting
+logged = False 
+font_size = 6
+
+bar_posteriors = False
+
+# Max y-axis
+ymax = 150
+
+# Axis tick marks
+nyticks = 3
+nxticks = 4
+
+# Whether to show axis labels
+show_ylabel = True
+show_xlabel = True
+
+# Whether to plot posterior distributions inferred by MISO
+show_posteriors = True 
+
+# Whether to plot the number of reads in each junction
+number_junctions = True
+
+resolution = .5
+posterior_bins = 40
+gene_posterior_ratio = 5
+
+# List of colors for read denisites of each sample
+colors = [
+    "#CC0011",
+    "#CC0011",
+    "#FF6600",
+    "#FF6600",
+    ]
+
+# Number of mapped reads in each sample
+# (Used to normalize the read density for RPKM calculation)
+coverages = [
+    73864312,
+    64750520,
+    70251522,
+    73403007,
+    ]
+
+# Bar color for Bayes factor distribution
+# plots (--plot-bf-dist)
+# Paint them blue
+bar_color = "b"
+
+# Bayes factors thresholds to use for --plot-bf-dist
+bf_thresholds = [0, 1, 2, 5, 10, 20]
+
+##
+## Names of colors for plotting
+##
+# "b" for blue
+# "k" for black
+# "r" for red
+# "g" for green
+#
+# Hex colors are accepted too.
