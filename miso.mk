@@ -68,3 +68,87 @@ run-miso-a5ss:
 compare-miso-se:
 	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6u cuffref-results/SE/line7u cuffref-results/SE/comparisons
 	cd miso; run_miso.py --compare-samples cuffref-results/SE/line6i cuffref-results/SE/line7i cuffref-results/SE/comparisons
+
+blast-miso-se:
+
+	#cd miso/cuffref-results/SE/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="nr",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.nr.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/SE/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="nr",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.nr.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/SE/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/SE/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/SE/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/SE/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	cd miso/cuffref-results/SE/comparisons/line7u_vs_line7i/bayes-factors; \
+	qsub -v db="Gallus_prot",input="line7u_vs_line7i.miso_bf.flt.fa",program="blastx",output="line7u_vs_line7i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	cd miso/cuffref-results/SE/comparisons/line6u_vs_line6i/bayes-factors; \
+	qsub -v db="Gallus_prot",input="line6u_vs_line6i.miso_bf.flt.fa",program="blastx",output="line6u_vs_line6i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	cd miso/cuffref-results/SE/comparisons/line7u_vs_line7i/bayes-factors; \
+	qsub -v db="Human_prot",input="line7u_vs_line7i.miso_bf.flt.fa",program="blastx",output="line7u_vs_line7i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	cd miso/cuffref-results/SE/comparisons/line6u_vs_line6i/bayes-factors; \
+	qsub -v db="Human_prot",input="line6u_vs_line6i.miso_bf.flt.fa",program="blastx",output="line6u_vs_line6i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+blast-miso-a3ss:
+
+	#cd miso/cuffref-results/A3SS/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="nr",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.nr.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A3SS/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="nr",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.nr.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A3SS/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/A3SS/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/A3SS/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A3SS/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A3SS/comparisons/line7u_vs_line7i/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line7u_vs_line7i.miso_bf.flt.fa",program="blastx",output="line7u_vs_line7i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	cd miso/cuffref-results/A3SS/comparisons/line6u_vs_line6i/bayes-factors; \
+	qsub -v db="Gallus_prot",input="line6u_vs_line6i.miso_bf.flt.fa",program="blastx",output="line6u_vs_line6i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/A3SS/comparisons/line7u_vs_line7i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line7u_vs_line7i.miso_bf.flt.fa",program="blastx",output="line7u_vs_line7i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A3SS/comparisons/line6u_vs_line6i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6u_vs_line6i.miso_bf.flt.fa",program="blastx",output="line6u_vs_line6i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+blast-miso-a5ss:
+
+	#cd miso/cuffref-results/A5SS/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="nr",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.nr.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A5SS/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="nr",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.nr.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A5SS/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/A5SS/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/A5SS/comparisons/line6i_vs_line7i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6i_vs_line7i.miso_bf.flt.fa",program="blastx",output="line6i_vs_line7i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A5SS/comparisons/line6u_vs_line7u/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6u_vs_line7u.miso_bf.flt.fa",program="blastx",output="line6u_vs_line7u.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A5SS/comparisons/line7u_vs_line7i/bayes-factors; \
+	#qsub -v db="Gallus_prot",input="line7u_vs_line7i.miso_bf.flt.fa",program="blastx",output="line7u_vs_line7i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	cd miso/cuffref-results/A5SS/comparisons/line6u_vs_line6i/bayes-factors; \
+	qsub -v db="Gallus_prot",input="line6u_vs_line6i.miso_bf.flt.fa",program="blastx",output="line6u_vs_line6i.miso_bf.flt.fa.gallus.xml" ~/miso-protocol/blast.sh
+	#cd miso/cuffref-results/A5SS/comparisons/line7u_vs_line7i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line7u_vs_line7i.miso_bf.flt.fa",program="blastx",output="line7u_vs_line7i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
+
+	#cd miso/cuffref-results/A5SS/comparisons/line6u_vs_line6i/bayes-factors; \
+	#qsub -v db="Human_prot",input="line6u_vs_line6i.miso_bf.flt.fa",program="blastx",output="line6u_vs_line6i.miso_bf.flt.fa.human.xml" ~/miso-protocol/blast.sh
